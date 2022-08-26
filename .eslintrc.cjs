@@ -1,7 +1,7 @@
 /*
  * @Author: Pan Jingyi
  * @Date: 2022-08-23 01:23:23
- * @LastEditTime: 2022-08-23 19:20:35
+ * @LastEditTime: 2022-08-25 19:26:15
  */
 module.exports = {
   env: {
@@ -27,6 +27,7 @@ module.exports = {
   },
   plugins: ['vue', '@typescript-eslint'],
   rules: {
-    endOfLine: 0
+    endOfLine: 0,
+    '@typescript-eslint/no-var-requires': 0
   }
 }

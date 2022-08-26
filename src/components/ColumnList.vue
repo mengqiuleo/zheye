@@ -1,7 +1,7 @@
 <!--
  * @Author: Pan Jingyi
  * @Date: 2022-08-23 20:57:37
- * @LastEditTime: 2022-08-23 22:42:10
+ * @LastEditTime: 2022-08-25 19:33:05
 -->
 <template>
   <div class="row">
@@ -10,12 +10,12 @@
         <div class="card-body text-center">
           <img
             :src="column.avatar"
-            class="rounded-circle border border-light w-25 my-3"
             :alt="column.title"
+            class="rounded-circle border border-light w-25 my-3"
           />
           <h5 class="card-title">{{ column.title }}</h5>
           <p class="card-text text-left">{{ column.description }}</p>
-          <a href="#" class="btn btn-primary">进入专栏</a>
+          <a href="#" class="btn btn-outline-primary">进入专栏</a>
         </div>
       </div>
     </div>
@@ -24,10 +24,12 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue'
+import imgLink from '@/assets/column.jpg'
+
 export interface ColumnProps {
   id: number
   title: string
-  avatar: string
+  avatar?: string
   description: string
 }
 export default defineComponent({
@@ -42,12 +44,13 @@ export default defineComponent({
     const columnList = computed(() => {
       return props.list.map((column) => {
         if (!column.avatar) {
-          column.avatar = require('@/assets/column.jpg')
+          column.avatar = imgLink
         }
         return column
       })
     })
     return {
+      imgLink,
       columnList
     }
   }

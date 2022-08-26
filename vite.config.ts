@@ -1,7 +1,7 @@
 /*
  * @Author: Pan Jingyi
  * @Date: 2022-08-23 01:20:41
- * @LastEditTime: 2022-08-23 21:28:42
+ * @LastEditTime: 2022-08-25 19:17:12
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
