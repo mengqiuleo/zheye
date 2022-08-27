@@ -1,7 +1,7 @@
 <!--
  * @Author: Pan Jingyi
  * @Date: 2022-08-26 12:24:00
- * @LastEditTime: 2022-08-26 14:05:15
+ * @LastEditTime: 2022-08-26 21:49:16
 -->
 <template>
   <div class="dropdown" ref="dropdownRef">
@@ -18,7 +18,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, watch } from 'vue'
+import useClickOutside from '@/hooks/useClickOutside'
+
 export default defineComponent({
   name: 'DropDown',
   props: {
@@ -29,13 +31,21 @@ export default defineComponent({
   },
   setup() {
     const isOpen = ref(false)
+    const dropdownRef = ref<null | HTMLElement>(null)
     const toggleOpen = () => {
       isOpen.value = !isOpen.value
       console.log('切换: ', isOpen)
     }
+    const isClickOutside = useClickOutside(dropdownRef)
+    watch(isClickOutside, () => {
+      if (isOpen.value && isClickOutside.value) {
+        isOpen.value = false
+      }
+    })
     return {
       isOpen,
-      toggleOpen
+      toggleOpen,
+      dropdownRef
     }
   }
 })

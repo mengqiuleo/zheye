@@ -1,7 +1,7 @@
 <!--
  * @Author: Pan Jingyi
  * @Date: 2022-08-26 12:07:52
- * @LastEditTime: 2022-08-26 14:06:55
+ * @LastEditTime: 2022-08-26 21:50:54
 -->
 <template>
   <nav class="navbar navbar-dark bg-primary justify-content-between mb-4 px-4">
@@ -16,7 +16,7 @@
     </ul>
     <ul v-else class="list-inline mb-0">
       <li class="list-inline-item">
-        <dropdown :title="`你好 ${user.name}`">
+        <DropDown :title="`你好 ${user.name}`">
           <DropdownItem
             ><a href="#" class="dropdown-item">新建文章</a></DropdownItem
           >
@@ -26,7 +26,7 @@
           <DropdownItem
             ><a href="#" class="dropdown-item">退出登录</a></DropdownItem
           >
-        </dropdown>
+        </DropDown>
       </li>
     </ul>
   </nav>
@@ -34,7 +34,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
-import Dropdown from './Dropdown.vue'
+import DropDown from './DropDown.vue'
 import DropdownItem from './DropdownItem.vue'
 
 export interface UserProps {
@@ -46,7 +46,7 @@ export interface UserProps {
 export default defineComponent({
   name: 'GlobalHeader',
   components: {
-    Dropdown,
+    DropDown,
     DropdownItem
   },
   props: {
