@@ -1,7 +1,7 @@
 /*
  * @Author: Pan Jingyi
  * @Date: 2022-08-23 01:23:23
- * @LastEditTime: 2022-08-25 19:26:15
+ * @LastEditTime: 2022-08-30 14:47:30
  */
 module.exports = {
   env: {
@@ -28,6 +28,8 @@ module.exports = {
   plugins: ['vue', '@typescript-eslint'],
   rules: {
     endOfLine: 0,
-    '@typescript-eslint/no-var-requires': 0
+    '@typescript-eslint/no-var-requires': 0,
+    //关闭组件命名规则
+    'vue/multi-word-component-names': 'off'
   }
 }

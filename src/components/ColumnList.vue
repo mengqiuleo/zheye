@@ -1,7 +1,7 @@
 <!--
  * @Author: Pan Jingyi
  * @Date: 2022-08-23 20:57:37
- * @LastEditTime: 2022-08-25 19:33:05
+ * @LastEditTime: 2022-08-30 15:15:42
 -->
 <template>
   <div class="row">
@@ -15,7 +15,11 @@
           />
           <h5 class="card-title">{{ column.title }}</h5>
           <p class="card-text text-left">{{ column.description }}</p>
-          <a href="#" class="btn btn-outline-primary">进入专栏</a>
+          <router-link
+            :to="`/column/${column.id}`"
+            class="btn btn-outline-primary"
+            >进入专栏</router-link
+          >
         </div>
       </div>
     </div>
